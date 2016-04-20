@@ -1,0 +1,14 @@
+Project2 : main.o printMenu.o Project2.o
+        g++ main.o printMenu.o Project2.o -o Project2
+
+main.o : main.cpp printMenu.cpp Project2.cpp record.h main.h
+        g++ -ansi -Wall -c main.cpp
+
+printMenu.o : printMenu.cpp
+        g++ -ansi -Wall -c printMenu.cpp
+
+Project2.o : Project2.cpp record.h  main.h
+        g++ -ansi -Wall -c Project2.cpp
+
+clean :
+        rm *.o Project2
